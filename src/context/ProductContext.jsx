@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 
  export  const ProductContext = createContext();
 
@@ -28,4 +28,11 @@ import { createContext, useState, useEffect } from "react";
                 {children}
             </ProductContext.Provider>
         );
+ }
+
+
+ // create a custom hook
+
+ export function useProducts(){
+    return useContext(ProductContext)
  }
